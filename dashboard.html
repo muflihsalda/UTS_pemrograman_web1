@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard - UTS</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* contoh internal CSS (memenuhi syarat internal style) */
+    h2#greeting { color: var(--accent); margin-bottom: 6px; }
+  </style>
+</head>
+<body onload="initCommon(); renderGreeting('greeting'); renderDashboardStats();">
+  <header class="topbar">
+  <div class="brand">
+    <img src="assets/logo_dashbord.png" alt="logo" class="logo">
+    <h1>Dashboard</h1>
+  </div>
+ <nav class="nav">
+  <a href="dashboard.html" class="nav-btn">Dashboard</a>
+  <a href="stok.html" class="nav-btn">Stok / Katalog</a>
+  <a href="checkout.html" class="nav-btn">Pemesanan</a>
+  <a href="tracking.html" class="nav-btn">Tracking</a>
+  <a href="#" onclick="logout()" class="nav-btn logout">Logout</a>
+</nav>
+
+</header>
+
+
+  <main class="container">
+    <section class="card" role="region" aria-labelledby="greeting">
+      <h2 id="greeting">Selamat datang</h2>
+      <p>Ringkasan singkat:</p>
+      <div class="stats">
+        <div class="stat"><h3 id="statBooks">0</h3><p>Total Buku</p></div>
+        <div class="stat"><h3 id="statOrders">0</h3><p>Jumlah Pesanan</p></div>
+      </div>
+      <p>Gunakan menu di atas untuk menuju halaman sesuai tugas.</p>
+    </section>
+  </main>
+
+  <footer class="footer">UTS Pemrograman Web 1</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

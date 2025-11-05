@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Informasi Stok/Katalog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="initCommon(); renderGreeting('greeting'); renderStockTable();">
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/logo_stok.png" alt="logo stok" class="logo">
+    <h1>Informasi Stok / Katalog</h1>
+  </div>
+  <nav class="nav">
+    <a href="dashboard.html" class="nav-btn">Dashboard</a>
+    <a href="stok.html" class="nav-btn">Stok / Katalog</a>
+    <a href="checkout.html" class="nav-btn">Pemesanan</a>
+    <a href="tracking.html" class="nav-btn">Tracking</a>
+    <a href="#" onclick="logout()" class="nav-btn logout">Logout</a>
+  </nav>
+</header>
+
+
+  <main class="container">
+    <h2 id="greeting">Halo</h2>
+
+    <section class="card">
+      <h3>Daftar Buku</h3>
+      <table class="table" aria-describedby="table-desc">
+        <caption id="table-desc" style="caption-side:top;text-align:left;padding-bottom:8px;">Tabel katalog buku</caption>
+        <thead>
+          <tr><th>ID</th><th>Judul</th><th>Harga</th><th>Stok</th><th>Aksi</th></tr>
+        </thead>
+        <tbody id="stok-body"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h3>Tambah Buku Baru</h3>
+      <form id="form-new-book" onsubmit="addNewBook(event)">
+        <input id="new-id" placeholder="ID (misal B010)" required>
+        <input id="new-title" placeholder="Judul" required>
+        <input id="new-author" placeholder="Penulis">
+        <input id="new-price" type="number" placeholder="Harga">
+        <input id="new-stock" type="number" placeholder="Stok">
+        <input id="new-img" placeholder="Path gambar (opsional)">
+        <button type="submit">Tambah</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">UTS Pemrograman Web 1</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

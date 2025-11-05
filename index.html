@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Login - UTS Pemrograman Web 1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="initCommon()">
+  <header class="topbar">
+    <img src="assets/logo_upb.jpg" alt="logo" class="logo">
+    <h1>UTS - Pemrograman Web 1</h1>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Halaman Login</h2>
+      <form onsubmit="loginSubmit(event)">
+        <label for="email">Email</label>
+        <input id="email" type="email" required placeholder="email@domain.com" />
+        <label for="password">Password</label>
+        <input id="password" type="password" required minlength="4" />
+        <button type="submit">Login</button>
+      </form>
+
+      <p>
+        <a href="#" onclick="openModal('modal-forgot')">Lupa Password</a> |
+        <a href="#" onclick="openModal('modal-register')">Daftar</a>
+      </p>
+    </section>
+
+    <!-- Modal Forgot -->
+    <div id="modal-forgot" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-forgot')">&times;</span>
+        <h3>Lupa Password</h3>
+        <p>Masukkan email Anda, instruksi akan dikirim (simulasi).</p>
+        <input id="forgot-email" type="email" placeholder="email Anda">
+        <button onclick="alert('Instruksi dikirim (simulasi)'); closeModal('modal-forgot')">Kirim</button>
+      </div>
+    </div>
+
+    <!-- Modal Register -->
+    <div id="modal-register" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-register')">&times;</span>
+        <h3>Daftar (simulasi)</h3>
+        <p>Registrasi bersifat simulasi — data tidak dikirim ke server.</p>
+        <input id="reg-name" placeholder="Nama lengkap">
+        <input id="reg-email" placeholder="Email">
+        <input id="reg-pass" type="password" placeholder="Password">
+        <button onclick="alert('Terdaftar (simulasi). Silakan login.'); closeModal('modal-register')">Daftar</button>
+      </div>
+    </div>
+
+    <p style="font-style:italic;">(Contoh penggunaan inline style — memenuhi syarat inline CSS kecil.)</p>
+  </main>
+
+  <footer class="footer">© 2025 UTS - Web 1</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

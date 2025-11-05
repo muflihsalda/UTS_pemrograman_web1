@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Tracking Pengiriman</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="initCommon(); renderGreeting('greeting');">
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/logo_pengiriman.png" alt="logo pengiriman" class="logo">
+    <h1>Tracking Pengiriman</h1>
+  </div>
+  <nav class="nav">
+    <a href="dashboard.html" class="nav-btn">Dashboard</a>
+    <a href="stok.html" class="nav-btn">Stok / Katalog</a>
+    <a href="checkout.html" class="nav-btn">Pemesanan</a>
+    <a href="tracking.html" class="nav-btn">Tracking</a>
+    <a href="#" onclick="logout()" class="nav-btn logout">Logout</a>
+  </nav>
+</header>
+
+
+  <main class="container">
+    <h2 id="greeting">Halo</h2>
+
+    <section class="card">
+      <h3>Masukkan Nomor Delivery Order</h3>
+      <form onsubmit="trackingSearch(event)">
+        <input id="tracking-no" placeholder="Contoh: DO20251105001" required>
+        <button type="submit">Cari</button>
+      </form>
+      <div id="tracking-result" style="margin-top:12px;"></div>
+    </section>
+  </main>
+
+  <footer class="footer">UTS Pemrograman Web 1</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

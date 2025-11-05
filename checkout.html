@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Halaman Pemesanan</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="initCommon(); renderGreeting('greeting'); populateBookOptions(); renderCart();">
+ <header class="topbar">
+  <div class="brand">
+    <img src="assets/logo_checkout.png" alt="logo pemesanan" class="logo">
+    <h1>Pemesanan</h1>
+  </div>
+  <nav class="nav">
+    <a href="dashboard.html" class="nav-btn">Dashboard</a>
+    <a href="stok.html" class="nav-btn">Stok / Katalog</a>
+    <a href="checkout.html" class="nav-btn">Pemesanan</a>
+    <a href="tracking.html" class="nav-btn">Tracking</a>
+    <a href="#" onclick="logout()" class="nav-btn logout">Logout</a>
+  </nav>
+</header>
+
+
+  <main class="container">
+    <h2 id="greeting">Halo</h2>
+
+    <section class="card">
+      <h3>Tambah ke Keranjang</h3>
+      <form onsubmit="addToCart(event)">
+        <label for="select-book">Pilih Buku</label>
+        <select id="select-book" required></select>
+        <label for="qty">Jumlah</label>
+        <input id="qty" type="number" value="1" min="1" />
+        <button type="submit">Tambah</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h3>Keranjang</h3>
+      <table class="table">
+        <thead><tr><th>ID</th><th>Judul</th><th>Qty</th><th>Harga</th><th>Subtotal</th><th>Aksi</th></tr></thead>
+        <tbody id="cart-body"></tbody>
+      </table>
+      <p id="cart-total">Rp 0</p>
+    </section>
+
+    <section class="card">
+      <h3>Informasi Pemesan</h3>
+      <form onsubmit="placeOrder(event)">
+        <input id="cust-name" placeholder="Nama Pemesan" required>
+        <textarea id="cust-address" placeholder="Alamat lengkap" required></textarea>
+        <button type="submit">Kirim Pesanan</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">UTS Pemrograman Web 1</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
